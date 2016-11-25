@@ -15,6 +15,7 @@
 		EE693BBF1DE332BD00BE8460 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE693BB21DE330EF00BE8460 /* SQLite.framework */; };
 		EE693BC71DE453FA00BE8460 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE693BC61DE453FA00BE8460 /* DatabaseHelper.swift */; };
 		EE693BC91DE470DB00BE8460 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE693BC81DE470DA00BE8460 /* CustomCell.swift */; };
+		EE693BCB1DE6336F00BE8460 /* NewTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE693BCA1DE6336F00BE8460 /* NewTodo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		EE693BA71DE330EE00BE8460 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		EE693BC61DE453FA00BE8460 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		EE693BC81DE470DA00BE8460 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		EE693BCA1DE6336F00BE8460 /* NewTodo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTodo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				EE693B601DE24F2000BE8460 /* AppDelegate.swift */,
 				EE693B621DE24F2000BE8460 /* ViewController.swift */,
 				EE693BC81DE470DA00BE8460 /* CustomCell.swift */,
+				EE693BCA1DE6336F00BE8460 /* NewTodo.swift */,
 				EE693BC61DE453FA00BE8460 /* DatabaseHelper.swift */,
 				EE693B641DE24F2000BE8460 /* Main.storyboard */,
 				EE693B671DE24F2000BE8460 /* Assets.xcassets */,
@@ -274,6 +277,7 @@
 				EE693BC71DE453FA00BE8460 /* DatabaseHelper.swift in Sources */,
 				EE693BC91DE470DB00BE8460 /* CustomCell.swift in Sources */,
 				EE693B611DE24F2000BE8460 /* AppDelegate.swift in Sources */,
+				EE693BCB1DE6336F00BE8460 /* NewTodo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

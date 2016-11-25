@@ -11,11 +11,12 @@ import SQLite
 
 class DatabaseHelper {
     
-    private let todo = Table("todo")
+    private let NewTodos = Table("NewTodos")
     
     private let id = Expression<Int64>("id")
     private let task = Expression<String?>("task")
     
+    static let instance = DatabaseHelper()
     private var db: Connection?
     
     init?() {
@@ -39,12 +40,14 @@ class DatabaseHelper {
         } catch {
             throw error
         }
+        
+        // try createTable()
     }
     
     private func createTable() throws {
         
         do{
-            try db!.run(todo.create(ifNotExists: true) {
+            try db!.run(NewTodos.create(ifNotExists: true) {
                 t in
                 
                 t.column(id, primaryKey: .autoincrement)
@@ -55,18 +58,44 @@ class DatabaseHelper {
         }
     }
     
-    func addAction(task: String) throws {
+    func addTodo(task: String) throws {
         
-        let insert = todo.insert(self.task <- task)
-        
-        // not sure if needed cause unique
         do {
-            let rowId  = try db!.run(insert)
-            print (rowId)
+            let insert = NewTodos.insert(self.task <- task)
+            let task = try db!.run(insert)
+            print (task)
+            
         } catch {
             throw error
         }
         
     }
+    
+    func getTodo() -> [TodoList] {
+        var NewTodos = [TodoList]()
+        
+        do {
+            for NewTodo in try db!.prepare(self.NewTodos) {
+                NewTodos.append(TodoList(id: NewTodo[id], task: NewTodo[task]!))
+            }
+        } catch {
+            print("Select failed")
+        }
+        
+        return NewTodos
+    }
+    
+    func deleteTodo(cid: Int64) -> Bool {
+        do {
+            let NewTodo = NewTodos.filter(id == cid)
+            try db!.run(NewTodo.delete())
+            return true
+        } catch {
+            
+            print("Delete failed")
+        }
+        return false
+    }
+        
 
 }

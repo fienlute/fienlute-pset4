@@ -16,6 +16,7 @@
 		EE693BC71DE453FA00BE8460 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE693BC61DE453FA00BE8460 /* DatabaseHelper.swift */; };
 		EE693BC91DE470DB00BE8460 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE693BC81DE470DA00BE8460 /* CustomCell.swift */; };
 		EE693BCB1DE6336F00BE8460 /* NewTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE693BCA1DE6336F00BE8460 /* NewTodo.swift */; };
+		EE693BCD1DE882CB00BE8460 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EE693BCC1DE882CA00BE8460 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		EE693BC61DE453FA00BE8460 /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 		EE693BC81DE470DA00BE8460 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		EE693BCA1DE6336F00BE8460 /* NewTodo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTodo.swift; sourceTree = "<group>"; };
+		EE693BCC1DE882CA00BE8460 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				EE693B601DE24F2000BE8460 /* AppDelegate.swift */,
 				EE693B621DE24F2000BE8460 /* ViewController.swift */,
 				EE693BC81DE470DA00BE8460 /* CustomCell.swift */,
+				EE693BCC1DE882CA00BE8460 /* README.md */,
 				EE693BCA1DE6336F00BE8460 /* NewTodo.swift */,
 				EE693BC61DE453FA00BE8460 /* DatabaseHelper.swift */,
 				EE693B641DE24F2000BE8460 /* Main.storyboard */,
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE693BCD1DE882CB00BE8460 /* README.md in Sources */,
 				EE693B631DE24F2000BE8460 /* ViewController.swift in Sources */,
 				EE693BC71DE453FA00BE8460 /* DatabaseHelper.swift in Sources */,
 				EE693BC91DE470DB00BE8460 /* CustomCell.swift in Sources */,

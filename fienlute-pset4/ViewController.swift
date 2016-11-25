@@ -10,17 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    @IBOutlet weak var tableView: UITableView!
-
+    @IBOutlet weak var tableView: UITableView!    
     
     @IBOutlet weak var userInput: UITextField!
     @IBOutlet weak var addButton: UIButton!
   
-    
-    // internet
     private var NewTodos = [TodoList]()
     private var selectedNewTodo: Int?
-    //
 
     private let db = DatabaseHelper()
     
@@ -45,7 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
             selectedNewTodo = indexPath.row
-            try db!.deleteTodo(cid: NewTodos[selectedNewTodo!].id!)
+            db!.deleteTodo(cid: NewTodos[selectedNewTodo!].id!)
             NewTodos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
@@ -53,27 +49,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
 
     @IBAction func addAction(_ sender: Any) {
-        
-       // tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: NewTodos.count-1, inSection: 0)], withRowAnimation: .Fade)
 
         do {
             try db!.addTodo(task: userInput.text!)
             NewTodos = DatabaseHelper.instance!.getTodo()
             tableView.reloadData()
+            userInput.text = ""
         } catch {
             print(error)
         }
     }
 
-    
-    // internet
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        userInput.text = NewTodos[indexPath.row].task
-        
+
         selectedNewTodo = indexPath.row
-    }
+        }
     
-    // demo stuff and internet
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return NewTodos.count
     }
@@ -81,16 +72,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
-        
+    
         var labelTodo: UILabel?
         labelTodo = cell.viewWithTag(1) as? UILabel
         cell.labelTodo?.text = NewTodos[indexPath.row].task
-        // cell.labelTodo.text = NewTodos[indexPath.row]
-        
+        cell.checkMark.isOn = NewTodos[indexPath.row].check
         return cell
-        
-    }
+        }
 
-    
-}
+    }
 

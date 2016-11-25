@@ -10,8 +10,15 @@ import UIKit
 
 class CustomCell: UITableViewCell {
 
+    private let db = DatabaseHelper()
+    
+    @IBOutlet weak var checkMark: UISwitch!
     @IBOutlet weak var labelTodo: UILabel!
     
+  
+    @IBAction func actionSwitch(_ sender: Any) {
+        try db!.updateSwitch(name: labelTodo.text!, newCheck: checkMark.isOn)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

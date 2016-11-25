@@ -40,15 +40,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uC9-mz-wPI">
+                                                    <rect key="frame" x="318" y="0.0" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="actionSwitch:" destination="c0v-cY-p99" eventType="valueChanged" id="WCm-S0-7KE"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="2i1-er-Snu" firstAttribute="top" secondItem="AuL-rA-itQ" secondAttribute="top" constant="7" id="6aq-uE-zRk"/>
+                                                <constraint firstAttribute="bottom" secondItem="uC9-mz-wPI" secondAttribute="bottom" constant="3" id="B4p-8w-Cp8"/>
+                                                <constraint firstItem="uC9-mz-wPI" firstAttribute="leading" secondItem="AuL-rA-itQ" secondAttribute="leading" constant="318" id="Dd9-pt-Q9L"/>
+                                                <constraint firstAttribute="trailing" secondItem="uC9-mz-wPI" secondAttribute="trailing" constant="8" id="EKG-p3-k2f"/>
                                                 <constraint firstAttribute="bottom" secondItem="2i1-er-Snu" secondAttribute="bottom" constant="6" id="FoC-Nh-56J"/>
+                                                <constraint firstItem="uC9-mz-wPI" firstAttribute="top" secondItem="AuL-rA-itQ" secondAttribute="top" id="G0w-ph-oJf"/>
                                                 <constraint firstItem="2i1-er-Snu" firstAttribute="leading" secondItem="AuL-rA-itQ" secondAttribute="leading" constant="20" id="Q9g-o6-XGL"/>
                                                 <constraint firstAttribute="trailing" secondItem="2i1-er-Snu" secondAttribute="trailing" constant="21" id="ej4-hN-Ico"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="checkMark" destination="uC9-mz-wPI" id="tzU-7o-eVS"/>
                                             <outlet property="labelTodo" destination="2i1-er-Snu" id="Vf6-dV-ROJ"/>
                                         </connections>
                                     </tableViewCell>
@@ -93,7 +104,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.83224511700000003" green="0.92065553590000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="qMM-5Z-ARB" firstAttribute="top" secondItem="INo-rS-CGW" secondAttribute="bottom" constant="8" symbolic="YES" id="1G9-0p-TOQ"/>
                                     <constraint firstItem="6s7-gx-6Kf" firstAttribute="top" secondItem="qnN-c5-ZdH" secondAttribute="top" constant="20" id="62Z-gW-4IO"/>
@@ -109,7 +119,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.91116751269035534" green="0.91116751269035534" blue="0.91116751269035534" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="qnN-c5-ZdH" secondAttribute="trailing" id="Bwf-mn-0mR"/>
                             <constraint firstAttribute="trailing" secondItem="i4g-MJ-8vz" secondAttribute="trailing" id="F4h-3a-lUv"/>

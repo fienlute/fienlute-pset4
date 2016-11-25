@@ -15,6 +15,7 @@ class DatabaseHelper {
     
     private let id = Expression<Int64>("id")
     private let task = Expression<String?>("task")
+    private let check = Expression<Bool>("check")
     
     static let instance = DatabaseHelper()
     private var db: Connection?
@@ -35,7 +36,7 @@ class DatabaseHelper {
         // first is for first element out of array 
         
         do {
-            db = try Connection("\(path)/db.sqlite3")
+            db = try Connection("\(path)/db3.sqlite3")
             try createTable()
         } catch {
             throw error
@@ -52,6 +53,7 @@ class DatabaseHelper {
                 
                 t.column(id, primaryKey: .autoincrement)
                 t.column(task)
+                t.column(check)
             })
         } catch{
             throw error
@@ -61,14 +63,12 @@ class DatabaseHelper {
     func addTodo(task: String) throws {
         
         do {
-            let insert = NewTodos.insert(self.task <- task)
+            let insert = NewTodos.insert(self.task <- task, check <- false)
             let task = try db!.run(insert)
             print (task)
-            
         } catch {
             throw error
         }
-        
     }
     
     func getTodo() -> [TodoList] {
@@ -76,7 +76,7 @@ class DatabaseHelper {
         
         do {
             for NewTodo in try db!.prepare(self.NewTodos) {
-                NewTodos.append(TodoList(id: NewTodo[id], task: NewTodo[task]!))
+                NewTodos.append(TodoList(id: NewTodo[id], task: NewTodo[task]!, check: NewTodo[check]))
             }
         } catch {
             print("Select failed")
@@ -96,6 +96,19 @@ class DatabaseHelper {
         }
         return false
     }
+    
+    func updateSwitch(name: String, newCheck: Bool) {
+        do {
+        
+            let item = NewTodos.filter(task == name)
+            try db!.run(item.update(check <- newCheck))
+        }
+        catch {
+            print("update failed")
+        }
+    }
+    
+    
         
 
 }
